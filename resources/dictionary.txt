@@ -26,11 +26,14 @@ Ich wohne seit zwei Jahren in Passau====I have been living for two years in Pass
 Ich wohne in der nähe von Passau====I live near to/close to Passau.
 Willst du eine Tomate?====Do you want a tomato?
 Willst du eine Handy?====Do you want a mobile?
-Wie viel kostet handy? Or Was kostet handy?====How much the phone costs?
-Wie viel kosten handy? Or Was kosten handy?====How much the phones costs?
+Wie viel kostet handy?/ Was kostet handy?====How much the phone costs?
+Wie viel kosten handy?/ Was kosten handy?====How much the phones costs?
 was machst du beruflich====What you do for a living
 Ich bin ein student====I am a student
-Wie alt bist du?====How old are you?
+Wie alt bist du?====How old are you? (informal)
+Wie alt sind sie?====How old are you? (formal)
+Ich bin fünfundzwanzig jahre alt = I am twentyfive years old
+Ich bin fünfzig = I am fifty
 freut mich dich kennenzulernen====I am please to meet you
 freut mich auch====I am also pleased
 Können sie das bitte wiederholen====Can you repeat that please (formal)
@@ -40,4 +43,3 @@ Kannst du bitte etwas langsamer sprechen====could you speak more slowly please (
 es tut mir leid, ich verstehe nicht====I am sorry, i don't understand
 Ich spreche nur ein bisschen deutsch====I only speak a little German
 Sprechen sie englisch?====do you speak english?
-

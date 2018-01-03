@@ -136,8 +136,9 @@ public class Welcome extends javax.swing.JFrame {
                         public void run() {
                             new DeutschTest(jFileChooser1.getSelectedFile().getAbsolutePath()).setVisible(true);
                         }
-                    });   
-                    this.setVisible(false);
+                    });
+                    this.dispose();
+//                    this.setVisible(false);
             }
     }//GEN-LAST:event_jButton1ActionPerformed
 

@@ -28,18 +28,24 @@ public class DeutschTest extends javax.swing.JFrame {
      * Creates new form DeutschTest
      */
     public DeutschTest() {
-        readFile(FILENAME_S);
+        readFile(FILENAME_S, false);
         initComponents();
         initValues();
         this.setResizable(false);
     }
     public DeutschTest(String filePath) {
-        readFile(filePath);
+        readFile(filePath, false);
         initComponents();
         initValues();
         this.setResizable(false);
     }
-    private void readFile(String filePath){
+    public DeutschTest(String filePath, Boolean deutsch2English) {//if Deutsch2English then give deutsch words/sentences and ask for english translation, else give english words/sentences and ask for deutsch sentences
+        readFile(filePath, deutsch2English);
+        initComponents();
+        initValues();
+        this.setResizable(false);
+    }
+    private void readFile(String filePath, Boolean deutsch2English){
         BufferedReader br = null;
         FileReader fr = null;
         try {
@@ -56,8 +62,13 @@ public class DeutschTest extends javax.swing.JFrame {
             String sCurrentLine;
             while ((sCurrentLine = br.readLine()) != null) {
                     if(null != sCurrentLine &&  !sCurrentLine.isEmpty() && sCurrentLine.contains("====")){
-                        sentences.put(sCurrentLine.split("====")[1], sCurrentLine.split("====")[0]);
-                        keys.add(sCurrentLine.split("====")[1]);
+                        if(deutsch2English){
+                            sentences.put(sCurrentLine.split("====")[0], sCurrentLine.split("====")[1]);
+                            keys.add(sCurrentLine.split("====")[0]);                            
+                        }else {
+                            sentences.put(sCurrentLine.split("====")[1], sCurrentLine.split("====")[0]);
+                            keys.add(sCurrentLine.split("====")[1]);                            
+                        }
                     }
             }
         } catch (Exception e) {

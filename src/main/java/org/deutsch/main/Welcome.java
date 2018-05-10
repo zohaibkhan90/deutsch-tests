@@ -37,6 +37,8 @@ public class Welcome extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jFileChooser1 = new javax.swing.JFileChooser();
+        deutsch2English = new javax.swing.JRadioButton();
+        english2Deutsch = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Welcome To Deutsch Test App");
@@ -81,6 +83,21 @@ public class Welcome extends javax.swing.JFrame {
             }
         });
 
+        deutsch2English.setSelected(true);
+        deutsch2English.setText("Deutsch to English");
+        deutsch2English.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deutsch2EnglishActionPerformed(evt);
+            }
+        });
+
+        english2Deutsch.setText("English to Deutsch");
+        english2Deutsch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                english2DeutschActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -90,15 +107,20 @@ public class Welcome extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(19, 19, 19)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(deutsch2English)
+                                    .addComponent(english2Deutsch))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 6, Short.MAX_VALUE)
+                        .addGap(0, 13, Short.MAX_VALUE)
                         .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -109,11 +131,18 @@ public class Welcome extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
                     .addComponent(jButton2))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton4))
-                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton4)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(4, 4, 4)
+                        .addComponent(deutsch2English)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(english2Deutsch)))
+                .addGap(23, 23, 23)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jFileChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,7 +163,7 @@ public class Welcome extends javax.swing.JFrame {
             } else {
                     java.awt.EventQueue.invokeLater(new Runnable() {
                         public void run() {
-                            new DeutschTest(jFileChooser1.getSelectedFile().getAbsolutePath()).setVisible(true);
+                            new DeutschTest(jFileChooser1.getSelectedFile().getAbsolutePath(), deutsch2English.isSelected()).setVisible(true);
                         }
                     });
                     this.dispose();
@@ -173,6 +202,18 @@ public class Welcome extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jFileChooser1ActionPerformed
 
+    private void deutsch2EnglishActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deutsch2EnglishActionPerformed
+        // TODO add your handling code here:
+        this.deutsch2English.setSelected(true);
+        this.english2Deutsch.setSelected(false);
+    }//GEN-LAST:event_deutsch2EnglishActionPerformed
+
+    private void english2DeutschActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_english2DeutschActionPerformed
+        // TODO add your handling code here:
+        this.deutsch2English.setSelected(false);
+        this.english2Deutsch.setSelected(true);
+    }//GEN-LAST:event_english2DeutschActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -209,6 +250,8 @@ public class Welcome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton deutsch2English;
+    private javax.swing.JRadioButton english2Deutsch;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
